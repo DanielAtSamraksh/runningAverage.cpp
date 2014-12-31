@@ -8,8 +8,8 @@ int main ( int argc, char *argv[] ) {
   for ( int i = 0; i < argc; i++ ) {
     double x = atof(argv[i]);
     printf ( "\nadding %lf: running average is now %lf\n", x, avg(x) );
-    double *avgs = avg.avgs();
-    unsigned n = avg.isFull? avg.size: avg.currentIndex;
+    vector<double> &avgs = avg.avgs();
+    unsigned n = avgs.size();
     for ( int i = 0; i < n; i++ ) {
       printf ( "  %d: %lf\n", i, avgs[ i ] );
     }
